@@ -27,7 +27,6 @@ const mockData = {
     { name: 'Python', category: 'programming', proficiency: 90, icon: '🐍' },
     { name: 'JavaScript', category: 'programming', proficiency: 85, icon: '🟨' },
     { name: 'Java', category: 'programming', proficiency: 80, icon: '☕' },
-    { name: 'C++', category: 'programming', proficiency: 75, icon: '⚡' },
     { name: 'SQL', category: 'programming', proficiency: 85, icon: '🗃️' },
     
     // Frontend Technologies
@@ -39,20 +38,17 @@ const mockData = {
     // Backend Technologies
     { name: 'Django', category: 'backend', proficiency: 85, icon: '🎸' },
     { name: 'Node.js', category: 'backend', proficiency: 80, icon: '�' },
-    { name: 'Express.js', category: 'backend', proficiency: 75, icon: '🚀' },
     { name: 'REST API', category: 'backend', proficiency: 85, icon: '🔗' },
     
     // Databases
     { name: 'MySQL', category: 'database', proficiency: 85, icon: '�' },
     { name: 'PostgreSQL', category: 'database', proficiency: 80, icon: '🐘' },
-    { name: 'MongoDB', category: 'database', proficiency: 75, icon: '🍃' },
     
     // Tools
     { name: 'Git', category: 'tools', proficiency: 90, icon: '📝' },
     { name: 'GitHub', category: 'tools', proficiency: 90, icon: '🐙' },
     { name: 'VS Code', category: 'tools', proficiency: 95, icon: '💻' },
     { name: 'Docker', category: 'tools', proficiency: 70, icon: '🐳' },
-    { name: 'Postman', category: 'tools', proficiency: 85, icon: '📮' },
   ],
   projects: [
     {
