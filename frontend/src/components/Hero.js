@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { portfolioAPI } from '../services/api';
+import profilePhoto from '../assets/images/profile-photo.jpg';
 
 const Hero = () => {
   const [profile, setProfile] = useState(null);
@@ -203,7 +204,16 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="hero-avatar">
-              <span>{profile.name.charAt(0)}</span>
+              <img 
+                src={profilePhoto} 
+                alt={profile.name}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '50%'
+                }}
+              />
             </div>
           </motion.div>
         </motion.div>

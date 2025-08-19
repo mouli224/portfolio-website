@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, Calendar, Star } from 'lucide-react';
 
+// Import project thumbnails
+import ecommerceThumbnail from '../assets/images/projects/ecommerce-platform.jpg';
+import taskManagerThumbnail from '../assets/images/projects/task-manager.jpg';
+import arWebAppThumbnail from '../assets/images/projects/ar-web-app.jpg';
+import portfolioThumbnail from '../assets/images/projects/portfolio-website.jpg';
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('all');
@@ -29,25 +35,25 @@ const Projects = () => {
         featured: true,
         github_url: 'https://github.com/mouli224/ecommerce-platform',
         live_url: '',
-        image: null,
+        image: ecommerceThumbnail,
         start_date: '2024-01-15',
         end_date: '2024-03-20'
       },
       {
         id: 2,
-        title: '3D Model Generator',
+        title: 'Task Management System',
         description: 'A collaborative task management application with real-time updates, team workspaces, file attachments, and progress tracking.',
         short_description: 'Collaborative task management with real-time features',
         technologies: [
           { name: 'React', category: 'frontend' },
-          { name: 'django', category: 'backend' },
+          { name: 'Django', category: 'backend' },
           { name: 'PostgreSQL', category: 'database' },
         ],
         status: 'completed',
         featured: true,
         github_url: 'https://github.com/mouli224/task-manager',
         live_url: '',
-        image: null,
+        image: taskManagerThumbnail,
         start_date: '2023-10-01',
         end_date: '2023-12-15'
       },
@@ -59,13 +65,13 @@ const Projects = () => {
         technologies: [
           { name: 'React', category: 'frontend' },
           { name: 'JavaScript', category: 'frontend' },
-          { name: 'webxrAr', category: 'tools' },
+          { name: 'WebXR', category: 'tools' },
         ],
         status: 'completed',
         featured: false,
         github_url: 'https://github.com/mouli224/augmented-reality-web-app',
         live_url: 'https://your-ar-demo.com',
-        image: null,
+        image: arWebAppThumbnail,
         start_date: '2023-08-01',
         end_date: '2023-09-15'
       },
@@ -81,9 +87,9 @@ const Projects = () => {
         ],
         status: 'in_progress',
         featured: true,
-        github_url: 'https://github.com/mouli224/portfolio',
+        github_url: 'https://github.com/mouli224/portfolio-website',
         live_url: null,
-        image: null,
+        image: portfolioThumbnail,
         start_date: '2024-07-01',
         end_date: null
       }
@@ -204,19 +210,35 @@ const Projects = () => {
                   boxShadow: 'var(--shadow-xl)'
                 }}
               >
-                  {/* Project Image Placeholder */}
+                  {/* Project Image */}
                 <div style={{
                   height: '200px',
-                  background: 'linear-gradient(135deg, var(--text-primary), var(--text-secondary))',
+                  background: project.image ? 'transparent' : 'linear-gradient(135deg, var(--text-primary), var(--text-secondary))',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--bg-primary)',
                   fontSize: '3rem',
                   position: 'relative',
-                  borderRadius: '0.75rem 0.75rem 0 0'
+                  borderRadius: '0.75rem 0.75rem 0 0',
+                  overflow: 'hidden'
                 }}>
-                  <span>🚀</span>
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transition: 'transform 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                      onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                    />
+                  ) : (
+                    <span>🚀</span>
+                  )}
                   {project.featured && (
                     <div style={{
                       position: 'absolute',
